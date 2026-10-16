@@ -1,32 +1,141 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="eng">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PASSWORD HERE</title>
+<title>Copy Password</title>
 
 <style>
-body{
-    margin:40px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family:Arial, sans-serif;
-    font-size:12px;
-    color:#222;
-    background:#fff;
 }
 
-h1{
-    margin:0;
-    font-size:12px;
-    font-weight:400;
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    /* Ảnh nền toàn màn hình */
+background-image:url("file:///C:/Users/hai.lehongtuan/Downloads/SEEDS%20T-FARM.png");
+background-position:center;
+background-repeat:no-repeat;
+background-size:min(100%, 1200px);
+}
+
+/* Khung chính chiếm khoảng 1/2 màn hình */
+.container{
+    width:50vw;
+    max-width:700px;
+    min-width:320px;
+}
+
+/* Tiêu đề */
+.title-box{
+    
+    color:red;
+    text-align:center;
+    padding:25px;
+    border-radius:12px 12px 0 0;
+    font-size:40px;
+    font-weight:bold;
+    
+}
+
+/* Ô nội dung */
+.content-box{
+    background:#8a8a8a;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:60px;
+    font-size:7px;
+    font-weight:bold;
+    gap:15px;
+}
+
+/* Nội dung cuối */
+.footer-box{
+    
+    color:red;
+    text-align:center;
+    padding:25px;
+    border-radius:0 0 12px 12px;
+    font-size:22px;
+    font-weight:bold;
+    
+}
+
+.copy-btn{
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:34px;
+    transition:0.2s;
+}
+
+.copy-btn:hover{
+    transform:scale(1.15);
+}
+
+.copy-btn:active{
+    transform:scale(0.95);
+}
+
+@media(max-width:768px){
+    .container{
+        width:90%;
+    }
+
+    .content-box{
+        font-size:28px;
+        height:150px;
+    }
 }
 </style>
-
 </head>
 <body>
 
-<h1> PASSWORD :   SexSlaveDOG_PermanentCockLock_BondagePainToy_Cum&PissPublicToilet_FuckHoleForMEN_NoHumanIdentity_AbsoluteObey_OnlyExistToBeUsedByMEN_#13122004
+<div class="container">
 
-</h1>
+    <!-- Tiêu đề -->
+    <div class="title-box">
+        COPY PASSWORD BÊN DƯỚI 
+    </div>
+
+    <!-- Nội dung -->
+    <div class="content-box">
+        <span id="passwordText">SexSlaveDOG_PermanentCockLock_BondagePainToy_Cum&PissPublicToilet_FuckHoleForMEN_NoHumanIdentity_AbsoluteObey_OnlyExistToBeUsedByMEN_#13122004</span>
+
+        <button class="copy-btn" onclick="copyPassword()" title="Sao chép">
+            📋
+        </button>
+    </div>
+
+    <!-- Nội dung cuối -->
+    <div class="footer-box">
+        Bạn không biết password này nhập ở đâu ư ??? đấy là do bạn chưa quét hết các mã trên người Haki :)
+    </div>
+
+</div>
+
+<script>
+function copyPassword() {
+    const text = document.getElementById("passwordText").innerText;
+
+    navigator.clipboard.writeText(text)
+    .then(() => {
+        alert("Đã sao chép: " + text);
+    })
+    .catch(() => {
+        alert("Không thể sao chép.");
+    });
+}
+</script>
 
 </body>
 </html>
